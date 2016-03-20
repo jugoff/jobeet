@@ -1,0 +1,26 @@
+{% extends 'ImieTotoBundle::layout.html.twig' %}
+ 
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href={{ asset('bundles/ImieTotoBundle/Resources/public/css/jobs.css') }} type="text/css" media="all" />
+{% endblock %}
+
+{% block body %}
+    <h1>job edit</h1>
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input type="submit" value="Edit" />
+    {{ form_end(edit_form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('Imie_job_index') }}">Back to the list</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
